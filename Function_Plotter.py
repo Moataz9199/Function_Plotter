@@ -134,7 +134,8 @@ class Window(QWidget):
                             N_Vari_Error.append(Function[index])
                         if Function[index][Index_Of_Next_Char] == "x" or (Function[index][Index_Of_Next_Char] not in Idenified_Operations and (Function[index][Index_Of_Next_Char] not in Identified_Numbers)):
                             N_Vari_Error[0] = True
-                            N_Vari_Error.append(Function[index])
+                            if Function[index] not in N_Vari_Error:
+                                N_Vari_Error.append(Function[index])
         return N_Vari_Error
 
     #Function Looping on the string, and detect if any operation repeated more than one time e.g (***,//,+++,--,etc.), and return list contains flag & the operations that repeated
