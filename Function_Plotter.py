@@ -204,8 +204,8 @@ class Window(QWidget):
 
         if Flag == 0:
             # checking if the max value is larger than the min value
-            if int(Max_Value) < int(Min_Value):
-                self.error("Minimum Value is Larger Than The Maximum Value")
+            if int(Max_Value) <= int(Min_Value):
+                self.error("Minimum Value is Larger Than or equal The Maximum Value")
                 Flag = 1
 
 
